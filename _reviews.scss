@@ -1,0 +1,74 @@
+﻿@use 'variables' as *;
+@use 'sass:color'; // เพิ่มสำหรับ color.adjust
+
+.reviews-section {
+  padding: $spacing-large $spacing-unit;
+  background: $light-bg;
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: $spacing-large;
+  }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-unit;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    background: $white;
+    padding: $spacing-unit;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-light;
+
+    .rating {
+      font-size: 1.2rem;
+      color: $secondary-color;
+      margin-bottom: $spacing-small;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $text-color;
+      margin-bottom: $spacing-unit;
+    }
+
+    .reviewer {
+      font-size: 0.95rem;
+      color: $muted-color;
+    }
+
+    .review-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: $primary-color;
+      color: $white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background $transition-speed;
+
+      &:hover {
+        background: color.adjust($primary-color, $lightness: -10%); // แทน darken
+      }
+    }
+
+    .reset-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #6c757d;
+      color: $white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background $transition-speed;
+
+      &:hover {
+        background: color.adjust(#6c757d, $lightness: -10%); // แทน darken
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+﻿@use 'variables' as *;
+@use 'sass:color'; // เพิ่มสำหรับ color.adjust
+
+.featured-villas {
+  padding: 80px 30px 60px;
+  background: $light-bg;
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+
+    a { color: $primary-color; text-decoration: underline; }
+  }
+}
+
+.villa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.villa-card {
+  background: $white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid $primary-color;
+  }
+
+  .content {
+    padding: 20px;
+
+    h3 {
+      font-size: 1.3rem;
+      color: $primary-color;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .details {
+      margin-bottom: 15px;
+
+      .room-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 10px;
+
+        p {
+          display: flex;
+          align-items: center;
+          font-size: 1rem;
+          color: #555;
+
+          i {
+            margin-right: 8px;
+            color: $primary-color;
+          }
+        }
+      }
+
+      .pet-sea-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        p {
+          display: flex;
+          align-items: center;
+          font-size: 0.95rem;
+          color: #777;
+
+          i {
+            margin-right: 8px;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .price {
+      font-size: 1.2rem;
+      color: $secondary-color;
+      margin-bottom: 15px;
+      font-weight: bold;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: $primary-color;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background $transition-speed;
+
+      &:hover {
+        background: color.adjust($primary-color, $lightness: -10%); // แทน darken
+      }
+    }
+  }
+}

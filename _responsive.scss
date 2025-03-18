@@ -1,0 +1,423 @@
+﻿@use 'variables' as *;
+
+@media (max-width: $breakpoint-mobile) {
+  // Header (ใช้ร่วมทุกหน้า)
+  header {
+    padding: $spacing-small;
+
+    .logo a {
+      font-size: $font-size-large;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: $primary-color;
+      flex-direction: column;
+      padding: $spacing-unit;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateY(-100%);
+      opacity: 0;
+
+      &.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      li {
+        margin: 15px 0;
+
+        a {
+          font-size: $font-size-large;
+          padding: $spacing-small;
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  // Hero (index.php)
+  .hero {
+    padding-top: 60px;
+
+    .hero-content {
+      margin-top: 120px;
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .search-bar {
+      flex-direction: column;
+      padding: 15px;
+      gap: 15px;
+
+      .input-group {
+        min-width: 100%;
+      }
+
+      input[type="date"],
+      input[type="number"],
+      select {
+        font-size: 18px;
+      }
+
+      .search-btn {
+        width: 100%;
+        padding: $spacing-small;
+      }
+    }
+  }
+
+  // Featured Villas (index.php, villas.php)
+  .featured-villas {
+    padding: 80px 15px 60px;
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  // Villas (villas.php)
+  .filter-section {
+    padding: 15px;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    .filter-form {
+      flex-direction: column;
+
+      .input-group {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .villa-grid {
+    grid-template-columns: 1fr;
+
+    .villa-card {
+      .details {
+        .room-group,
+        .pet-sea-group {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+        }
+      }
+    }
+  }
+
+  // Villas Detail (villas_detail.php)
+  .villa-hero {
+    height: 50vh;
+  }
+
+  .villa-details {
+    padding: 15px;
+
+    .villa-info {
+      .villa-title {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .gallery-container {
+    flex-direction: column;
+    gap: 20px;
+
+    .swiper-card {
+      min-width: 100%;
+    }
+  }
+
+  // Reviews (reviews.php)
+  .reviews-section {
+    padding: 15px;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .review-form-container {
+    padding: 15px;
+
+    .review-form {
+      .button-group {
+        flex-direction: column;
+        gap: 10px;
+
+        input[type="submit"],
+        input[type="reset"] {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Promotions (promotions.php)
+  .promotion-section {
+    padding: 15px;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .promotion-card {
+      padding: 15px;
+
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .discount {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Admin Dashboard (admin_dashboard.php)
+  .admin-header {
+    flex-direction: column;
+    gap: 10px;
+
+    .admin-info {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .dashboard-content {
+    padding: 15px;
+
+    .dashboard-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .dashboard-menu {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Admin Login (ad_pl_login.php)
+  .contact-us {
+    padding: 15px;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .contact-form {
+      padding: 15px;
+
+      .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Manage Villas (manage_villas.php)
+  .manage-section {
+    padding: 15px;
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    .manage-table {
+      display: block;
+      width: 100%;
+
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+
+      td {
+        border-top: none;
+        &:before {
+          content: attr(data-label);
+          font-weight: bold;
+          display: inline-block;
+          width: 50%;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  // All Villas (all_villas.php)
+  .admin-container {
+    padding: 15px;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .villa-table {
+      display: block;
+      width: 100%;
+
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+
+      td {
+        border-top: none;
+        &:before {
+          content: attr(data-label);
+          font-weight: bold;
+          display: inline-block;
+          width: 50%;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  // Contact Us (contactus.php)
+  .contact-us {
+    padding: 15px;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p h2 {
+      font-size: 1.2rem;
+    }
+
+    .contact-form {
+      padding: 15px;
+
+      form {
+        .form-group {
+          label {
+            font-size: 1.1rem;
+          }
+
+          input,
+          textarea {
+            font-size: 1rem;
+          }
+        }
+
+        .form-buttons {
+          flex-direction: column;
+          gap: 10px;
+
+          button {
+            font-size: 1.1rem;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // Edit Villas (edit_villas.php)
+  .manage-section {
+    padding: 15px;
+
+    .villa-form {
+      padding: 15px;
+
+      .form-group {
+        label {
+          font-size: 1rem;
+        }
+
+        input,
+        textarea,
+        select {
+          font-size: 0.9rem;
+        }
+
+        .image-preview img {
+          max-width: 100px;
+        }
+      }
+
+      .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+
+        .submit-btn,
+        .reset-btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Footer (ใช้ร่วมทุกหน้า)
+  footer {
+    padding: 15px;
+
+    .footer-content {
+      p {
+        font-size: 0.9rem;
+
+        h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

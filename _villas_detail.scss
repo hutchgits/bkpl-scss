@@ -1,0 +1,82 @@
+﻿@use 'variables' as *;
+@use 'sass:color'; // เพิ่มสำหรับ color.adjust
+
+.villa-detail {
+  padding: $spacing-large $spacing-unit;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .villa-header {
+    text-align: center;
+    margin-bottom: $spacing-large;
+
+    h1 {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: $spacing-small;
+    }
+
+    .location {
+      font-size: 1.2rem;
+      color: $muted-color;
+    }
+  }
+
+  .villa-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-unit;
+    margin-bottom: $spacing-large;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: $border-radius;
+    }
+  }
+
+  .villa-info {
+    background: $white;
+    padding: $spacing-unit;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-light;
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-unit;
+      margin-bottom: $spacing-unit;
+
+      p {
+        font-size: 1rem;
+        color: $text-color;
+
+        i {
+          margin-right: 8px;
+          color: $primary-color;
+        }
+      }
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: $secondary-color;
+      margin-bottom: $spacing-unit;
+    }
+
+    .book-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: $primary-color;
+      color: $white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background $transition-speed;
+
+      &:hover {
+        background: color.adjust($primary-color, $lightness: -10%); // แทน darken
+      }
+    }
+  }
+}

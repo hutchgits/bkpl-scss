@@ -1,0 +1,13 @@
+@use 'variables' as *; // ต้องมาก่อนเสมอ
+@use 'reset' as *;     // ตามด้วย reset
+@use 'header' as *;
+@use 'hero' as *;
+@use 'villas' as *;
+@use 'villas_detail' as *;
+@use 'reviews' as *;
+@use 'promotions' as *;
+@use 'admin' as *;
+@use 'contactus' as *;
+@use 'footer' as *;
+@use 'animations' as *;
+@use 'responsive' as *;

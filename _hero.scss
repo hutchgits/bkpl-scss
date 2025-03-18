@@ -1,0 +1,151 @@
+﻿.search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(220, 240, 255, 0.7));
+    padding: 30px 40px;
+    border-radius: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 126, 186, 0.2);
+    border: 2px solid rgba(0, 126, 186, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.8s ease-out;
+
+    // เส้นตกแต่งด้านบน
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(to right, #007EBA, #00b7eb);
+        border-radius: 20px 20px 0 0;
+    }
+
+    // Hover effect สำหรับการ์ด
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 126, 186, 0.3);
+    }
+
+    .search-row {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 12px 18px;
+            min-width: 220px;
+            max-width: 260px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+
+            &:hover {
+                border-color: #007EBA;
+                box-shadow: 0 5px 15px rgba(0, 126, 186, 0.3);
+                transform: translateY(-2px);
+            }
+
+            i {
+                margin-right: 12px;
+                color: #007EBA;
+                font-size: 1.3rem;
+                transition: color 0.3s;
+            }
+
+            input, select {
+                border: none;
+                outline: none;
+                font-size: 1.1rem;
+                width: 100%;
+                padding: 5px;
+                background: transparent;
+                color: #333;
+                font-family: 'Prompt', sans-serif;
+            }
+
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            select {
+                appearance: none;
+                background: url('data:image/svg+xml;utf8,<svg fill="%23007EBA" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+                background-size: 18px;
+                padding-right: 35px;
+                cursor: pointer;
+            }
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #007EBA, #005f8c);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 126, 186, 0.4);
+
+            &:hover {
+                background: linear-gradient(135deg, #005f8c, #003f5c);
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 126, 186, 0.6);
+            }
+
+            i {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        padding: 20px;
+        border-radius: 15px;
+
+        .search-row {
+            flex-direction: column;
+            gap: 10px;
+
+            .input-group {
+                width: 100%;
+                max-width: unset;
+                margin-bottom: 10px;
+            }
+
+            .search-btn {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    }
+}
